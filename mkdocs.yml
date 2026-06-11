@@ -1,1 +1,4 @@
-site_name: My Docs
+site_name: polymer
+site_url: https://xinyueyixing.github.io/polymer/
+theme:
+  name: material
