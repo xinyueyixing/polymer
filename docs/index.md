@@ -1,17 +1,31 @@
-# Welcome to MkDocs
-这是一个成功的案例1
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Welcome to Polymer Molecular Modeling Lab
 
-## Commands
+Modeling Lab Manual
+本网站主要用于整理实验室常用仪器、软件、服务器、实验操作和安全检查相关内容，方便新进入实验室的学弟学妹快速熟悉实验室环境，减少重复说明和操作失误。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
+## 网站内容
+本网站目前包括以下内容：
+* 光散射仪器的使用方法、注意事项和操作视频
+* 真空加热机的使用说明和操作视频
+* 薛定谔软件的基本使用方法
+* PuTTY 软件连接服务器的方法
+* Material studio 结构构建的基本流程
+* 3D 打印机的使用方法
+* 学校网站查找论文的方法
+* 高分子学会登录方法和注意事项
+* 实验室安全检查注意事项
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 使用建议
+
+第一次使用某个仪器或软件前，请先阅读对应页面的说明，并观看操作视频。
+
+涉及仪器启动、样品放置、温度设置、真空操作、服务器命令、实验安全等内容时，请务必在确认理解后再进行操作。
+如果不确定，请先询问实验室负责人或有经验的同学。
+
+
+## 更新说明
+
+本网站会根据实验室实际使用情况持续更新。
+如果发现说明不清楚、步骤遗漏或仪器状态发生变化，请及时补充或修改。
+      
