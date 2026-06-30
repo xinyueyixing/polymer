@@ -1,4 +1,62 @@
+
 site_name: polymer
 site_url: https://xinyueyixing.github.io/polymer/
 theme:
   name: material
+
+
+
+nav:
+  - 首页: index.md
+  - 第一部分:
+      - part1/index.md
+  - academic:
+      - academic/paper-search.md
+      - academic/polymer-society.md
+  - experiment:
+      - experiment/basic-operations.md
+      - experiment/safety-check.md      
+  - instruments:
+      - instruments/3d-printer.md
+      - instruments/light-scattering.md
+      - instruments/vacuum-heater.md
+  - server:
+      - server/remote-server.md
+  - software:
+      - software/materialStudio.md
+      - software/putty.md
+      - software/schrodinger.md
+  
+
+
+docs_dir: docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.top
+    - navigation.indexes
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode 
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+
+extra:
+  social:
+    - icon: material/omega
+      link: https://sites.google.com/view/modelinglab/home
+      name: Modeling Lab
+>>>>>>> 5d0c23b (add polymer society images and ppt files)
