@@ -18,6 +18,7 @@ nav:
   - instruments:
       - instruments/3d-printer.md
       - instruments/light-scattering_vacuum-heater.md
+      - instruments/light_scattering_windows.md
       
   - server:
       - server/remote-server.md
