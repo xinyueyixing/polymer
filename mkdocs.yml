@@ -21,11 +21,9 @@ nav:
       
   - server:
       - server/remote-server.md
+
   - software:
-      - software/materialStudio.md
-      - software/putty.md
       - software/schrodinger.md
-  
 
 
 docs_dir: docs/
