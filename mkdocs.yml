@@ -7,9 +7,8 @@ theme:
 
 
 nav:
-  - 首页: index.md
-  - 第一部分:
-      - part1/index.md
+  - Home: index.md
+
   - academic:
       - academic/paper-search.md
       - academic/polymer-society.md
