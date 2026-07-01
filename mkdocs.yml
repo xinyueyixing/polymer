@@ -17,8 +17,8 @@ nav:
       - experiment/safety-check.md      
   - instruments:
       - instruments/3d-printer.md
-      - instruments/light-scattering.md
-      - instruments/vacuum-heater.md
+      - instruments/light-scattering_vacuum-heater.md
+      
   - server:
       - server/remote-server.md
   - software:
