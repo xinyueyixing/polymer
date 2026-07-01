@@ -1,0 +1,1808 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://xinyueyixing.github.io/polymer/server/remote-server/">
+      
+      
+        <link rel="prev" href="../../instruments/light_scattering_windows/">
+      
+      
+        <link rel="next" href="../../software/schrodinger/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>원격 서버 사용 안내 - polymer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="polymer" class="md-header__button md-logo" aria-label="polymer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            polymer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              원격 서버 사용 안내
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../academic/paper-search/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  academic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../experiment/basic-operations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  experiment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../instruments/3d-printer/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  instruments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  server
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../software/schrodinger/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  software
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="polymer" class="md-nav__button md-logo" aria-label="polymer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    polymer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    academic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    academic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../academic/paper-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    논문 작성, 학위논문 제출 및 투고 준비
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../academic/polymer-society/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    고분자학회 초록 등록 및 포스터 발표 준비
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    experiment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    experiment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experiment/basic-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실험실 기본 운영 및 공용 장비 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experiment/safety-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실험실 안전관리 및 안전점검 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    instruments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    instruments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instruments/3d-printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3D 프린터 사용 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instruments/light-scattering_vacuum-heater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    광산란 장비 및 진공 건조기 사용 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instruments/light_scattering_windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    광산란 장비용 컴퓨터 및 Windows XP 재설치 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    server
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    원격 서버 사용 안내
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    원격 서버 사용 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 원격 서버란?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 접속 프로그램 및 설치 파일
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 서버 접속 방법
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 실험실 서버 목록
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 파일 전송 방법
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 파일 전송 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-filezilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 FileZilla 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-termius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Termius 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 기본 명령어
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 작업 실행 관련 명령어
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. top 명령어 사용 방법
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. top 명령어 사용 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 top 화면에서 확인할 수 있는 항목
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 프로세스 상태 S의 의미
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 top 화면에서 자주 사용하는 키
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 서버 사용 시 주의사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 참고사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/schrodinger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schrödinger 사용 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 원격 서버란?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 접속 프로그램 및 설치 파일
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 서버 접속 방법
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 실험실 서버 목록
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 파일 전송 방법
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 파일 전송 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-filezilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 FileZilla 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-termius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Termius 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 기본 명령어
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 작업 실행 관련 명령어
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. top 명령어 사용 방법
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. top 명령어 사용 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 top 화면에서 확인할 수 있는 항목
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 프로세스 상태 S의 의미
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 top 화면에서 자주 사용하는 키
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 서버 사용 시 주의사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 참고사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">원격 서버 사용 안내</h1>
+<p>이 페이지는 실험실 원격 서버 접속 방법, 기본 명령어, 파일 업로드 및 다운로드 방법, 서버 사용 시 주의사항을 정리한 문서입니다.</p>
+<hr />
+<h2 id="1">1. 원격 서버란?</h2>
+<p>원격 서버는 계산 작업, 데이터 저장, 시뮬레이션 실행 등을 위해 사용하는 실험실 공용 컴퓨터입니다.<br />
+개인 컴퓨터보다 장시간 계산 작업을 수행하기에 적합합니다.</p>
+<hr />
+<h2 id="2">2. 접속 프로그램 및 설치 파일</h2>
+<p>서버 접속과 파일 전송에는 아래 프로그램을 사용할 수 있습니다.</p>
+<ul>
+<li>PuTTY</li>
+<li>FileZilla</li>
+<li>Termius</li>
+<li>VS Code Remote SSH</li>
+<li>Terminal</li>
+</ul>
+<p>PuTTY와 FileZilla 설치 파일은 아래 압축 파일을 참고합니다.</p>
+<p><a href="../../assets/pdf/server/software.zip">PuTTY 및 FileZilla 설치 파일 다운로드</a></p>
+<p>!!! warning "주의"
+    설치 파일의 용량이 100MB를 넘으면 GitHub에 업로드할 수 없습니다.<br />
+    용량이 큰 경우에는 Google Drive, OneDrive 또는 실험실 서버에 따로 보관하고 링크만 남기는 것이 좋습니다.</p>
+<hr />
+<h2 id="3">3. 서버 접속 방법</h2>
+<p>서버 접속 시 필요한 정보는 아래와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서버 주소</td>
+<td>담당자에게 확인</td>
+</tr>
+<tr>
+<td>사용자 이름</td>
+<td>개인 계정</td>
+</tr>
+<tr>
+<td>비밀번호</td>
+<td>개인 계정 비밀번호</td>
+</tr>
+<tr>
+<td>접속 프로그램</td>
+<td>PuTTY, Termius, VS Code Remote SSH 등</td>
+</tr>
+</tbody>
+</table>
+<p>!!! danger "보안 주의"
+    서버 IP, 사용자 이름, 비밀번호는 외부에 공개하지 않습니다.<br />
+    GitHub Pages는 공개 웹사이트이므로 실제 계정 정보나 비밀번호를 문서에 직접 작성하지 않습니다.</p>
+<hr />
+<h2 id="4">4. 실험실 서버 목록</h2>
+<p>현재 실험실에서 사용하는 주요 서버는 아래와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>서버명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ed1</td>
+<td>계산 서버</td>
+</tr>
+<tr>
+<td>ed2</td>
+<td>계산 서버</td>
+</tr>
+<tr>
+<td>ed3</td>
+<td>계산 서버</td>
+</tr>
+<tr>
+<td>ed4</td>
+<td>계산 서버</td>
+</tr>
+<tr>
+<td>ed5</td>
+<td>계산 서버</td>
+</tr>
+<tr>
+<td>sanchez</td>
+<td>메인 서버</td>
+</tr>
+<tr>
+<td>baxter</td>
+<td>계산 서버</td>
+</tr>
+</tbody>
+</table>
+<p><code>sanchez</code>는 메인 서버이며, 내부에 <code>sanchez1</code>, <code>sanchez2</code> 두 개의 하위 서버가 있습니다.</p>
+<p><code>sanchez</code>에 접속한 후 아래 명령어를 입력하면 하위 서버로 접속할 수 있습니다.</p>
+<pre><code class="language-bash">rsh sanchez1
+</code></pre>
+<p>또는:</p>
+<pre><code class="language-bash">rsh sanchez2
+</code></pre>
+<p>서버 IP는 아래 형식을 따릅니다.</p>
+<pre><code class="language-text">220.149.233.xxx
+</code></pre>
+<p>마지막 숫자는 서버마다 다르므로, 실제 접속 주소는 교수님 또는 서버 담당자에게 확인해야 합니다.</p>
+<p>아래 이미지는 서버 접속 정보 및 서버 목록을 확인하기 위한 참고 자료입니다.</p>
+<p><img alt="서버 접속 정보 참고 이미지" src="../../assets/images/server/server.jpg" /></p>
+<hr />
+<h2 id="5">5. 파일 전송 방법</h2>
+<p>파일 전송은 주로 아래 방법을 사용할 수 있습니다.</p>
+<ul>
+<li>FileZilla</li>
+<li>Termius</li>
+<li>VS Code Remote SSH</li>
+<li>scp 명령어</li>
+<li>sftp</li>
+</ul>
+<p>처음 사용하는 경우에는 FileZilla 또는 Termius를 사용하는 것이 비교적 편리합니다.</p>
+<h3 id="51-filezilla">5.1 FileZilla 사용</h3>
+<p>FileZilla는 서버와 개인 컴퓨터 사이에 파일을 주고받을 때 사용합니다.</p>
+<p>확인할 내용:</p>
+<ul>
+<li>서버 주소</li>
+<li>사용자 이름</li>
+<li>비밀번호</li>
+<li>포트 번호</li>
+<li>업로드 / 다운로드 위치</li>
+</ul>
+<h3 id="52-termius">5.2 Termius 사용</h3>
+<p>Termius는 서버 접속과 파일 전송을 함께 할 수 있는 프로그램입니다.<br />
+외부에서 서버 상태를 확인하거나 간단한 파일 전송을 할 때 사용할 수 있습니다.</p>
+<hr />
+<h2 id="6">6. 기본 명령어</h2>
+<p>서버에서 자주 사용하는 기본 명령어는 아래와 같습니다.</p>
+<pre><code class="language-bash">pwd                 # 현재 위치 확인
+ls                  # 파일 목록 확인
+ls -lh              # 파일 크기를 보기 쉽게 표시
+cd 폴더명            # 폴더 이동
+cd ..               # 상위 폴더로 이동
+mkdir 폴더명         # 새 폴더 만들기
+rm 파일명            # 파일 삭제
+rm -r 폴더명         # 폴더 삭제
+cp 원본 대상         # 파일 복사
+mv 원본 대상         # 파일 이동 또는 이름 변경
+whoami              # 현재 사용자 이름 확인
+logout              # 로그아웃
+exit                # 로그아웃 또는 터미널 종료
+</code></pre>
+<hr />
+<h2 id="7">7. 작업 실행 관련 명령어</h2>
+<p>계산 작업을 실행하거나 중단할 때 자주 사용하는 명령어는 아래와 같습니다.</p>
+<pre><code class="language-bash">./run.sh            # 실행 파일 실행
+Ctrl + C            # 현재 실행 중인 작업 중단
+Ctrl + Z            # 현재 작업 일시정지
+bg                  # 일시정지한 작업을 백그라운드로 실행
+q                   # 일부 프로그램 또는 top 화면 종료
+</code></pre>
+<p>심볼릭 링크가 필요한 경우 아래와 같은 형식으로 사용할 수 있습니다.</p>
+<pre><code class="language-bash">ln -s /home/USERNAME/ /mnt/USERNAME
+</code></pre>
+<p>여기서 <code>USERNAME</code>은 본인의 서버 계정 이름으로 바꿔야 합니다.</p>
+<hr />
+<h2 id="8-top">8. <code>top</code> 명령어 사용 방법</h2>
+<p><code>top</code> 명령어는 서버에서 현재 실행 중인 프로세스와 CPU, 메모리 사용량을 실시간으로 확인할 때 사용합니다.<br />
+서버가 느리거나 계산 작업이 제대로 실행되고 있는지 확인할 때 자주 사용합니다.</p>
+<pre><code class="language-bash">top
+</code></pre>
+<p>아래 이미지는 명령어 사용 예시입니다.</p>
+<p><img alt="top 명령어 사용 예시" src="../../assets/images/server/code.png" /></p>
+<hr />
+<h3 id="81-top">8.1 <code>top</code> 화면에서 확인할 수 있는 항목</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>프로세스 ID</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>해당 작업을 실행한 사용자</td>
+</tr>
+<tr>
+<td>PR / NI</td>
+<td>프로세스 우선순위</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>프로세스가 사용하는 전체 가상 메모리</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>실제 물리 메모리 사용량</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>공유 메모리 사용량</td>
+</tr>
+<tr>
+<td>S</td>
+<td>프로세스 상태</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>CPU 사용률</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>메모리 사용률</td>
+</tr>
+<tr>
+<td>TIME+</td>
+<td>해당 프로세스가 사용한 누적 CPU 시간</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>실행 중인 명령어 또는 프로그램 이름</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="82-s">8.2 프로세스 상태 <code>S</code>의 의미</h3>
+<table>
+<thead>
+<tr>
+<th>상태</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>실행 중 또는 실행 대기 상태</td>
+</tr>
+<tr>
+<td>S</td>
+<td>대기 상태</td>
+</tr>
+<tr>
+<td>D</td>
+<td>디스크 입출력 등으로 인해 중단할 수 없는 대기 상태</td>
+</tr>
+<tr>
+<td>T</td>
+<td>정지된 상태</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>좀비 프로세스</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="83-top">8.3 <code>top</code> 화면에서 자주 사용하는 키</h3>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th>기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>top 종료</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>CPU 사용률 기준으로 정렬</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>메모리 사용률 기준으로 정렬</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>특정 사용자 프로세스만 보기</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>CPU 코어별 사용량 표시</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>도움말 보기</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>특정 프로세스 종료</td>
+</tr>
+</tbody>
+</table>
+<p>!!! danger "주의"
+    <code>k</code> 키를 사용하면 프로세스를 종료할 수 있습니다.<br />
+    본인이 실행한 작업이 아닌 경우 절대 함부로 종료하지 않습니다.<br />
+    다른 사람의 계산 작업을 종료하면 데이터 손실이나 계산 실패가 발생할 수 있습니다.</p>
+<hr />
+<h2 id="9">9. 서버 사용 시 주의사항</h2>
+<p>서버는 여러 사람이 함께 사용하는 공용 자원이므로 아래 사항을 지켜야 합니다.</p>
+<ul>
+<li>다른 사람의 폴더나 파일을 임의로 삭제하지 않습니다.</li>
+<li>큰 파일은 정리하거나 개인 저장 공간으로 이동합니다.</li>
+<li>계산 작업을 실행하기 전에 저장 위치와 파일명을 확인합니다.</li>
+<li>문제가 발생하면 임의로 설정을 바꾸지 말고 담당자에게 문의합니다.</li>
+</ul>
+<hr />
+<h2 id="10">10. 참고사항</h2>
+<p>파일 정리, 작업 실행, 데이터 저장 위치를 항상 신중하게 확인해야 합니다.</p>
+<p>서버가 느리거나 문제가 있어 보일 때 바로 재부팅하거나 프로세스를 종료하지 말고, 먼저 <code>top</code> 명령어로 어떤 작업이 CPU와 메모리를 많이 사용하고 있는지 확인합니다.<br />
+다른 사람의 작업일 수 있으므로, 문제가 있어 보이면 해당 사용자나 서버 담당자에게 먼저 확인하는 것이 좋습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://sites.google.com/view/modelinglab/home" target="_blank" rel="noopener" title="Modeling Lab" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.15 19h-5.76v-2.13c2.11-1.62 3.2-3.63 3.2-6.03 0-1.5-.43-2.68-1.27-3.55C14.47 6.42 13.37 6 12.03 6c-1.35 0-2.46.42-3.32 1.3-.87.87-1.3 2.07-1.3 3.58 0 2.38 1.09 4.38 3.2 5.99V19H4.85v-2.13h3.56c-2.37-1.55-3.56-3.64-3.56-6.27 0-2.1.65-3.74 1.96-4.94 1.31-1.21 3.03-1.81 5.16-1.81 2.18 0 3.92.6 5.22 1.79 1.31 1.19 1.96 2.86 1.96 4.94 0 2.63-1.2 4.73-3.6 6.29h3.6z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "search.share", "navigation.top", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
